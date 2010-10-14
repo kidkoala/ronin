@@ -9,6 +9,10 @@ gemspec
 # DataMapper dependencies
 gem 'dm-migrations',	DM_VERSION, :git => 'http://github.com/postmodern/dm-migrations.git', :branch => 'runner'
 
+# DataMapper plugins
+gem 'dm-is-remixable',	DM_VERSION, :git => "#{DATA_MAPPER}/dm-is-remixable.git"
+gem 'dm-taggings',	'~> 0.11.0', :git => 'http://github.com/solnic/dm-taggings.git'
+
 # Library dependencies
 gem 'ronin-support',	'~> 0.1.0', :git => "#{RONIN}/ronin-support.git"
 

@@ -1,4 +1,11 @@
 GIT
+  remote: http://github.com/datamapper/dm-is-remixable.git
+  revision: 6b8d8a1ba91354d0c4e4ccd3f98ddac8e494c888
+  specs:
+    dm-is-remixable (1.0.2)
+      dm-core (~> 1.0.2)
+
+GIT
   remote: http://github.com/postmodern/dm-migrations.git
   revision: 0fbaeefb1d260ac312d23b13d62c09de89d1f1af
   branch: runner
@@ -16,6 +23,15 @@ GIT
       data_paths (~> 0.2.1)
       uri-query_params (~> 0.4.0)
 
+GIT
+  remote: http://github.com/solnic/dm-taggings.git
+  revision: 66387a9867c39ee5d01c9d9fc402c83ae3d0f5a5
+  specs:
+    dm-taggings (0.11.0)
+      dm-constraints (~> 1.0.2)
+      dm-core (~> 1.0.2)
+      dm-is-remixable (~> 1.0.2)
+
 PATH
   remote: .
   specs:
@@ -30,7 +46,6 @@ PATH
       dm-is-predefined (~> 0.3.0)
       dm-serializer (~> 1.0.2)
       dm-sqlite-adapter (~> 1.0.2)
-      dm-tags (~> 1.0.2)
       dm-timestamps (~> 1.0.2)
       dm-types (~> 1.0.2)
       dm-validations (~> 1.0.2)
@@ -46,7 +61,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     activesupport (3.0.0)
-    addressable (2.2.0)
+    addressable (2.2.2)
     chars (0.2.0)
     combinatorics (0.3.1)
     contextify (0.2.0)
@@ -75,8 +90,6 @@ GEM
     dm-sqlite-adapter (1.0.2)
       dm-do-adapter (~> 1.0.2)
       do_sqlite3 (~> 0.10.2)
-    dm-tags (1.0.2)
-      dm-core (~> 1.0.2)
     dm-timestamps (1.0.2)
       dm-core (~> 1.0.2)
     dm-types (1.0.2)
@@ -155,10 +168,11 @@ DEPENDENCIES
   dm-core (~> 1.0.2)
   dm-do-adapter (~> 1.0.2)
   dm-is-predefined (~> 0.3.0)
+  dm-is-remixable (~> 1.0.2)!
   dm-migrations (~> 1.0.2)!
   dm-serializer (~> 1.0.2)
   dm-sqlite-adapter (~> 1.0.2)
-  dm-tags (~> 1.0.2)
+  dm-taggings (~> 0.11.0)!
   dm-timestamps (~> 1.0.2)
   dm-types (~> 1.0.2)
   dm-validations (~> 1.0.2)

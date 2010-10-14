@@ -23,12 +23,14 @@ require 'ronin/target'
 require 'ronin/model'
 
 require 'dm-timestamps'
-require 'dm-tags'
+require 'dm-taggings'
 
 module Ronin
   class Address
 
     include Model
+
+    is :taggable
 
     # The primary key of the Address
     property :id, Serial
@@ -54,9 +56,6 @@ module Ronin
 
     # Tracks when the IP Address was first created
     timestamps :created_at
-
-    # Tags
-    has_tags_on :tags
 
   end
 end

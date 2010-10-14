@@ -26,7 +26,7 @@ require 'ronin/comment'
 require 'ronin/model'
 
 require 'dm-timestamps'
-require 'dm-tags'
+require 'dm-taggings'
 require 'uri'
 require 'uri/query_params'
 
@@ -42,6 +42,8 @@ module Ronin
       'http' => ::URI::HTTP,
       'ftp' => ::URI::FTP
     }
+
+    is :taggable
 
     # Primary key of the URL
     property :id, Serial
@@ -72,9 +74,6 @@ module Ronin
 
     # Defines the created_at timestamp
     timestamps :created_at
-
-    # Tags
-    has_tags_on :tags
 
     #
     # Parses the URL.

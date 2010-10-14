@@ -24,7 +24,7 @@ require 'ronin/model/has_name'
 require 'ronin/model/has_description'
 
 require 'dm-timestamps'
-require 'dm-tags'
+require 'dm-taggings'
 
 module Ronin
   class Organization
@@ -32,6 +32,8 @@ module Ronin
     include Model
     include Model::HasName
     include Model::HasDescription
+
+    is :taggable
 
     # Primary key of the organization
     property :id, Serial
@@ -41,9 +43,6 @@ module Ronin
 
     # Tracks when the organization was first created
     timestamps :created_at
-
-    # Tags
-    has_tags_on :tags
 
   end
 end

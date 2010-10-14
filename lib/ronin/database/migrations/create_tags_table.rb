@@ -18,35 +18,25 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/target'
-require 'ronin/model'
-
-require 'dm-timestamps'
-require 'dm-taggings'
+require 'ronin/database/migrations/migrations'
 
 module Ronin
-  class RemoteFile
+  module Database
+    module Migrations
+      migration(:create_tags_table) do
+        up do
+          create_table :tags do
+            column :id, Integer, :serial => true
+            column :name, String, :not_null => true
+          end
 
-    include Model
+          create_index :tags, :name, :unique => true
+        end
 
-    is :taggable
-
-    # Primary key of the remote file
-    property :id, Serial
-
-    # Remote path of the file
-    property :remote_path, String, :required => true,
-                                   :index => true,
-                                   :unique => :target_remote_path
-
-    # Local path of the file
-    property :local_path, String, :required => true
-
-    # The target the file was recovered from
-    belongs_to :target, :unique => :target_remote_path
-
-    # Tracks when the remote file was first recovered
-    timestamps :created_at
-
+        down do
+          drop_table :tags
+        end
+      end
+    end
   end
 end
